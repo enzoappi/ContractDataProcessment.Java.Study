@@ -11,14 +11,17 @@ package model.services;
  */
 public class PayService implements OnlinePaymentService{
     
+    private Double paymentInterestTax = 0.01;
+    private Double paymentFeeTax = 0.02;
+    
     @Override
     public double paymentInterest(double amount, int month) {
-        return amount * 0.01 * month;
+        return amount * paymentInterestTax * month;
     }
     
     @Override
     public double paymentFee(double amount) {
-        return amount * 0.02;
+        return amount * paymentFeeTax;
     }
     
 }
